@@ -201,13 +201,17 @@ if (process.env.NODE_ENV !== 'test') {
     const bcrypt = require('bcryptjs');
 
     // --- Admin аккаунтын жасау ---
-    await User.create({
-        name: 'Admin',
-        email: 'admin@jobportal.kz',
-        password: await bcrypt.hash('admin123', 10),
-        role: 'admin'
-    });
-    console.log('✅ Admin жасалды: admin@jobportal.kz / admin123');
+    const adminExists = await User.findOne({ where: { email: 'admin@jobportal.kz' } });
+    if (!adminExists) {
+        await User.create({
+            name: 'Admin',
+            email: 'admin@jobportal.kz',
+            password: await bcrypt.hash('admin123', 10),
+            role: 'admin'
+        });
+        console.log('✅ Admin жасалды: admin@jobportal.kz / admin123');
+    }
+
 
     // --- Вакансияларды қосу ---
     const vacancyCount = await Vacancy.count();
