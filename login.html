@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кіру | JobPortal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">JobPortal</a></div>
+        <nav>
+            <a href="index.html">Басты бет</a>
+            <a href="register.html">Тіркелу</a>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <form onsubmit="handleLogin(event)">
+            <h2 style="font-size: 28px; letter-spacing: -0.5px;">Қош келдіңіз</h2>
+            <p style="color: var(--text-muted); margin-bottom: 25px;">Жүйеге кіру үшін деректеріңізді енгізіңіз</p>
+            
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            
+            <label for="loginPass">Құпиясөз</label>
+            <input type="password" id="loginPass" placeholder="Құпиясөз" required>
+            
+            <button type="submit" class="btn" style="width: 100%;">Кіру</button>
+            
+            <p style="text-align: center; margin-top: 20px; font-size: 14px;">
+                Аккаунт жоқ па? <a href="register.html" style="color: var(--ios-blue); text-decoration: none;">Тіркелу</a>
+            </p>
+        </form>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

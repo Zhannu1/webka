@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Қызметтер | JobPortal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style="text-align:center; margin-bottom:40px;">Өзекті вакансиялар</h2>
+        <div class="grid">
+            <article class="card">
+                <h3>UI/UX Designer</h3>
+                <p>Apple экожүйесін жақсы көретін дизайнерлер іздейміз.</p>
+                <a href="#" class="btn">Өтінім</a>
+            </article>
+
+            <article class="card">
+                <h3>Frontend Developer</h3>
+                <p>HTML, CSS және React арқылы платформа дамыту.</p>
+                <a href="#" class="btn">Өтінім</a>
+            </article>
+
+            <article class="card">
+                <h3>Project Manager</h3>
+                <p>Жобаларды тиімді басқару және командалық жұмыс.</p>
+                <a href="#" class="btn">Өтінім</a>
+            </article>
+        </div>
+    </main>
+
+    <main>
+    <h2>Вакансия қосу</h2>
+    <div class="card">
+        <input type="text" id="vacancyTitle" placeholder="Вакансия атауы...">
+        <button class="btn" onclick="addVacancy()">Қосу</button>
+    </div>
+    <ul id="vacancyList" class="grid" style="list-style:none; margin-top:20px;"></ul>
+</main>
+<script src="js/script.js"></script>
+
+    <footer>
+        <p>© 2026 JobPortal</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,221 @@
+/* 1. CSS VARIABLES (Тапсырма бойынша айнымалылар қолдану) */
+:root {
+    --ios-bg: #f5f5f7;            /* Apple-дың ақшыл-сұр фоны */
+    --ios-blue: #0071e3;          /* Классикалық iOS көк түсі */
+    --ios-card: rgba(255, 255, 255, 0.72); /* Glassmorphism үшін */
+    --text-main: #1d1d1f;         /* Қара-сұр мәтін */
+    --text-muted: #86868b;        /* Көмекші мәтін */
+    --border: rgba(0, 0, 0, 0.1);
+    --radius: 20px;               /* Дөңгеленген бұрыштар */
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. BASE RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+    background-color: var(--ios-bg);
+    color: var(--text-main);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased; /* Қаріпті жұмсарту */
+}
+
+/* 3. STICKY HEADER (Тапсырма бойынша) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px); /* Glassmorphism эффектісі */
+    -webkit-backdrop-filter: blur(20px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 0.5px solid var(--border);
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 13px;
+    font-weight: 400;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--ios-blue);
+}
+
+/* Белсенді бетті ерекшелеу */
+nav a.active {
+    font-weight: 600;
+    color: var(--ios-blue);
+}
+
+/* 4. HERO SECTION (Анимациямен) */
+.hero {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    background: #fff;
+    animation: fadeIn 1s ease-in; /* Жаңа элемент пайда болғандағы анимация */
+}
+
+.hero h1 {
+    font-size: clamp(32px, 8vw, 56px);
+    font-weight: 700;
+    letter-spacing: -1.2px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 21px;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* 5. SERVICES (GRID & CARDS) */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 40px 10%;
+}
+
+.card {
+    background: var(--white);
+    padding: 35px;
+    border-radius: var(--radius);
+    background: var(--ios-card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.02); /* Көтерілу анимациясы */
+    background: #ffffff;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+/* 6. BUTTONS (iOS Style) */
+.btn {
+    background: var(--ios-blue);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 980px; /* Сопақша iOS батырмасы */
+    text-decoration: none;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    opacity: 0.9;
+    box-shadow: 0 4px 15px rgba(0, 113, 227, 0.3);
+}
+
+/* 7. FORM (CONTACT & REGISTER) */
+form {
+    max-width: 480px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #d2d2d7;
+    border-radius: 12px;
+    background: #f5f5f7;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--ios-blue);
+    background: #fff;
+}
+
+/* 8. FOOTER */
+footer {
+    text-align: center;
+    padding: 60px 10%;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 0.5px solid var(--border);
+}
+
+/* 9. ANIMATIONS & RESPONSIVE */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    header { padding: 0 5%; }
+    nav { gap: 10px; }
+    .hero h1 { font-size: 32px; }
+}
+
+/* JS ТЕМА АУЫСТЫРУ ҮШІН КЛАСС */
+.dark-hero {
+    background: #1d1d1f !important;
+    color: #fff !important;
+}
+.dark-hero p {
+    color: #a1a1a6 !important;
+}
+
+.counter-badge {
+    background: rgba(0, 113, 227, 0.1);
+    color: var(--ios-blue);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}

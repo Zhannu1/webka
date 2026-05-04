@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тіркелу | JobPortal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">JobPortal</a></div>
+        <nav>
+            <a href="index.html">Басты бет</a>
+            <a href="login.html">Кіру</a>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <form onsubmit="handleRegister(event)">
+            <h2 style="font-size: 28px; letter-spacing: -0.5px;">Жаңа аккаунт</h2>
+            <p style="color: var(--text-muted); margin-bottom: 25px;">Платформаның барлық мүмкіндігін ашыңыз</p>
+            
+            <label for="regName">Толық атыңыз</label>
+            <input type="text" id="regName" placeholder="Аты-жөніңіз" required>
+            
+            <label for="regEmail">Email мекенжайы</label>
+            <input type="email" id="regEmail" placeholder="example@icloud.com" required>
+            
+            <label for="regPass">Құпиясөз</label>
+            <input type="password" id="regPass" placeholder="Кемінде 6 таңба" required>
+            
+            <button type="submit" class="btn" style="width: 100%;">Тіркелу</button>
+            
+            <p style="text-align: center; margin-top: 20px; font-size: 14px;">
+                Аккаунтыңыз бар ма? <a href="login.html" style="color: var(--ios-blue); text-decoration: none;">Кіру</a>
+            </p>
+        </form>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
